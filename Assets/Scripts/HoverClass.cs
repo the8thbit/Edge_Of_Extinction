@@ -36,7 +36,7 @@ public class HoverClass : MonoBehaviour
      * 
      * @return  Void
      */
-    private void OnMouseEnter()
+    public void OnMouseEnter()
     {
         //storing the original sorting order
         OriginalOrder = Rend.sortingOrder;
@@ -52,7 +52,7 @@ public class HoverClass : MonoBehaviour
      * 
      * @return  Void
      */
-    private void OnMouseExit()
+    public void OnMouseExit()
     {
         //restting the sorting order to the stored original value
         Rend.sortingOrder = OriginalOrder;

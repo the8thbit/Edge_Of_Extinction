@@ -25,7 +25,7 @@ public class DoubleClickDescription : MonoBehaviour, IPointerClickHandler
     private Image imageOfCard;
     private Text descriptionOfCard;
     private Text actions;
-    private Button buttonActionEnabler;
+    //private Button buttonActionEnabler;
     private Card cardHolder;
     private Player thePlayer; //will be used to hold the card info 
 
@@ -37,18 +37,18 @@ public class DoubleClickDescription : MonoBehaviour, IPointerClickHandler
     //private Button buttonMultiComputerOne;
     //private Button buttonMultiComputerTwo;
     //private Button buttonMultiComputerThree;
-
     //private Computer comp;
+
+
 
 
     // Use this for initialization
     void Start()
     {
-        //assigns the objects to UI objects
-        NameOfCard = GameObject.Find("CardName").GetComponent<Text>();
-        ImageOfCard = GameObject.Find("CardImage").GetComponent<Image>();
-        DescriptionOfCard = GameObject.Find("CardDescription").GetComponent<Text>();
-        ButtonActionEnabler = GameObject.Find("ActionButton").GetComponent<Button>();
+
+        //this creates an instacne of the hover class to make sure the card goes back to size
+        //initializing Human Person Player
+
         //ButtonMultiComputerOne = GameObject.Find("MultiComputerOneButton").GetComponent<Button>();
         //ButtonMultiComputerTwo = GameObject.Find("MultiComputerTwoButton").GetComponent<Button>();
         //ButtonMultiComputerThree = GameObject.Find("MultiComputerThreeButton").GetComponent<Button>();
@@ -265,7 +265,14 @@ public class DoubleClickDescription : MonoBehaviour, IPointerClickHandler
         //makes sure that it was double clicked
         if (eventData.clickCount == 2)
         {
+            //shows the card info board
             GameManager.Instance.HideShow.ShowCardInfo();
+
+            //assigns the objects to UI objects
+            NameOfCard = GameObject.Find("CardName").GetComponent<Text>();
+            ImageOfCard = GameObject.Find("CardImage").GetComponent<Image>();
+            DescriptionOfCard = GameObject.Find("CardDescription").GetComponent<Text>();
+            //ButtonActionEnabler = GameObject.Find("ActionButton").GetComponent<Button>();
 
             //SETTING THE FILTERS FOR THE CARDS NAMES SO THAT THEY PRINT OUT PROPERLY
             string nameHolder = this.gameObject.name; //this will be used to hold the name until it is correct
@@ -296,11 +303,13 @@ public class DoubleClickDescription : MonoBehaviour, IPointerClickHandler
                 DescriptionOfCard.text += "\n" + CardHolder.StandingAction.ToString();
 
                 if (CardHolder.SpecialAction == "" || CardHolder.SpecialAction == null)
-                    ButtonActionEnabler.gameObject.SetActive(false);
+                {
+                    //ButtonActionEnabler.gameObject.SetActive(false);
+                }
                 else
                 {
                     DescriptionOfCard.text += "\n" + CardHolder.SpecialAction.ToString();
-                    ButtonActionEnabler.gameObject.SetActive(true);
+                    //ButtonActionEnabler.gameObject.SetActive(true);
                 }
             }
             else if (nameHolder.Contains("Region")) //region name filter
@@ -332,11 +341,13 @@ public class DoubleClickDescription : MonoBehaviour, IPointerClickHandler
                 DescriptionOfCard.text += "\n" + CardHolder.StandingAction;
 
                 if (CardHolder.SpecialAction == "" || CardHolder.SpecialAction == null)
-                    ButtonActionEnabler.gameObject.SetActive(false);
+                {
+                    //ButtonActionEnabler.gameObject.SetActive(false);
+                }
                 else
                 {
                     DescriptionOfCard.text += "\n" + CardHolder.SpecialAction.ToString();
-                    ButtonActionEnabler.gameObject.SetActive(true);
+                    //ButtonActionEnabler.gameObject.SetActive(true);
                 }
             }
             else if (nameHolder.Contains("Plant")) //plant name filter
@@ -366,11 +377,13 @@ public class DoubleClickDescription : MonoBehaviour, IPointerClickHandler
                 DescriptionOfCard.text += "\n" + CardHolder.StandingAction;
 
                 if (CardHolder.SpecialAction == "" || CardHolder.SpecialAction == null)
-                    ButtonActionEnabler.gameObject.SetActive(false);
+                {
+                    //ButtonActionEnabler.gameObject.SetActive(false);
+                }
                 else
                 {
                     DescriptionOfCard.text += "\n" + CardHolder.SpecialAction.ToString();
-                    ButtonActionEnabler.gameObject.SetActive(true);
+                    //ButtonActionEnabler.gameObject.SetActive(true);
                 }
             }
             else if (nameHolder.Contains("Multi")) //multiplayer name filter
@@ -405,11 +418,13 @@ public class DoubleClickDescription : MonoBehaviour, IPointerClickHandler
                 DescriptionOfCard.text += "\n" + CardHolder.StandingAction;
 
                 if (CardHolder.SpecialAction == "" || CardHolder.SpecialAction == null)
-                    ButtonActionEnabler.gameObject.SetActive(false);
+                {
+                    // ButtonActionEnabler.gameObject.SetActive(false);
+                }
                 else
                 {
                     DescriptionOfCard.text += "\n" + CardHolder.SpecialAction.ToString();
-                    ButtonActionEnabler.gameObject.SetActive(true);
+                    //ButtonActionEnabler.gameObject.SetActive(true);
                 }
             }
             else if (nameHolder.Contains("Condition")) //condition name filter
@@ -439,11 +454,13 @@ public class DoubleClickDescription : MonoBehaviour, IPointerClickHandler
                 DescriptionOfCard.text += "\n" + CardHolder.StandingAction;
 
                 if (CardHolder.SpecialAction == "" || CardHolder.SpecialAction == null)
-                    ButtonActionEnabler.gameObject.SetActive(false);
+                {
+                    //ButtonActionEnabler.gameObject.SetActive(false);
+                }
                 else
                 {
                     DescriptionOfCard.text += "\n" + CardHolder.SpecialAction.ToString();
-                    ButtonActionEnabler.gameObject.SetActive(true);
+                    //ButtonActionEnabler.gameObject.SetActive(true);
                 }
             }
             else if (nameHolder.Contains("Invertebrate")) //invertebrate name filter
@@ -473,11 +490,13 @@ public class DoubleClickDescription : MonoBehaviour, IPointerClickHandler
                 DescriptionOfCard.text += "\n" + CardHolder.StandingAction;
 
                 if (CardHolder.SpecialAction == "" || CardHolder.SpecialAction == null)
-                    ButtonActionEnabler.gameObject.SetActive(false);
+                {
+                    //ButtonActionEnabler.gameObject.SetActive(false);
+                }
                 else
                 {
                     DescriptionOfCard.text += "\n" + CardHolder.SpecialAction.ToString();
-                    ButtonActionEnabler.gameObject.SetActive(true);
+                    //ButtonActionEnabler.gameObject.SetActive(true);
                 }
             }
             else if (nameHolder.Contains("Fungi")) //fungi name filter
@@ -507,11 +526,13 @@ public class DoubleClickDescription : MonoBehaviour, IPointerClickHandler
                 DescriptionOfCard.text += "\n" + CardHolder.StandingAction;
 
                 if (CardHolder.SpecialAction == "" || CardHolder.SpecialAction == null)
-                    ButtonActionEnabler.gameObject.SetActive(false);
+                {
+                    //ButtonActionEnabler.gameObject.SetActive(false);
+                }
                 else
                 {
                     DescriptionOfCard.text += "\n" + CardHolder.SpecialAction.ToString();
-                    ButtonActionEnabler.gameObject.SetActive(true);
+                   // ButtonActionEnabler.gameObject.SetActive(true);
                 }
             }
             else if (nameHolder.Contains("Human")) //humam name filter
@@ -541,11 +562,13 @@ public class DoubleClickDescription : MonoBehaviour, IPointerClickHandler
                 DescriptionOfCard.text += "\n" + CardHolder.StandingAction;
 
                 if (CardHolder.SpecialAction == "" || CardHolder.SpecialAction == null)
-                    ButtonActionEnabler.gameObject.SetActive(false);
+                {
+                    //ButtonActionEnabler.gameObject.SetActive(false);
+                }
                 else
                 {
                     DescriptionOfCard.text += "\n" + CardHolder.SpecialAction.ToString();
-                    ButtonActionEnabler.gameObject.SetActive(true);
+                    //ButtonActionEnabler.gameObject.SetActive(true);
                 }
             }
             else if (nameHolder.Contains("Animal")) //animal name filter
@@ -575,11 +598,13 @@ public class DoubleClickDescription : MonoBehaviour, IPointerClickHandler
                 DescriptionOfCard.text += "\n" + CardHolder.StandingAction;
 
                 if (CardHolder.SpecialAction == "" || CardHolder.SpecialAction == null)
-                    ButtonActionEnabler.gameObject.SetActive(false);
+                {
+                    //ButtonActionEnabler.gameObject.SetActive(false);
+                }
                 else
                 {
                     DescriptionOfCard.text += "\n" + CardHolder.SpecialAction.ToString();
-                    ButtonActionEnabler.gameObject.SetActive(true);
+                    //ButtonActionEnabler.gameObject.SetActive(true);
                 }
             }
             else if (nameHolder.Contains("Microbe")) //microbe name filter
@@ -609,11 +634,13 @@ public class DoubleClickDescription : MonoBehaviour, IPointerClickHandler
                 DescriptionOfCard.text += "\n" + CardHolder.StandingAction;
 
                 if (CardHolder.SpecialAction == "" || CardHolder.SpecialAction == null)
-                    ButtonActionEnabler.gameObject.SetActive(false);
+                {
+                    //ButtonActionEnabler.gameObject.SetActive(false);
+                }
                 else
                 {
                     DescriptionOfCard.text += "\n" + CardHolder.SpecialAction.ToString();
-                    ButtonActionEnabler.gameObject.SetActive(true);
+                    //ButtonActionEnabler.gameObject.SetActive(true);
                 }
             }
 
@@ -699,7 +726,7 @@ public class DoubleClickDescription : MonoBehaviour, IPointerClickHandler
     public Image ImageOfCard { get => imageOfCard; set => imageOfCard = value; }
     public Text DescriptionOfCard { get => descriptionOfCard; set => descriptionOfCard = value; }
     public Text Actions { get => actions; set => actions = value; }
-    public Button ButtonActionEnabler { get => buttonActionEnabler; set => buttonActionEnabler = value; }
+    //public Button ButtonActionEnabler { get => buttonActionEnabler; set => buttonActionEnabler = value; }
     public Card CardHolder { get => cardHolder; set => cardHolder = value; }
     //public string MultiplayerComputer { get => multiplayerComputer; set => multiplayerComputer = value; }
     //public Button ButtonMultiComputerOne { get => buttonMultiComputerOne; set => buttonMultiComputerOne = value; }

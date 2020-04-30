@@ -92,8 +92,8 @@ public class Human : Player
         base.GenerateCardObject();
         //adding the Draggable script to the card object, which allows it to be dragged and placed appropriately
         CardObject.AddComponent<Draggable>();
-        //CardObject.AddComponent<DoubleClickDescription>(); //makes the cards able to be clicked on
-        //CardObject.GetComponent<DoubleClickDescription>().CreatePlayer(CurrentPlayer);
+        CardObject.AddComponent<DoubleClickDescription>(); //makes the cards able to be clicked on
+        CardObject.GetComponent<DoubleClickDescription>().CreatePlayer(CurrentPlayer);
     }
 
     /*

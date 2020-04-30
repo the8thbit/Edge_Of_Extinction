@@ -122,6 +122,7 @@ public class HideShowBoards : MonoBehaviour {
     }
 
     //will show deck discard
+    //in this current version of the game this is never used
     public void ShowDeckDiscard()
     {
         ShowNone();
@@ -132,10 +133,12 @@ public class HideShowBoards : MonoBehaviour {
     }
 
     //will show card info
+    //this is different than the others becasue we need the cnvas that is worked on to still be active so the 
+    //hover class zoom goes back to normal
     public void ShowCardInfo()
     {
-        ShowNone();
-        CardInfoPanelCG.alpha = 1f;
+        //this is set to 2 so it is in fron of the previously active canvas
+        CardInfoPanelCG.alpha = 2f;
         CardInfoPanelCG.blocksRaycasts = true;
         CardInfoPanelCG.interactable = true;
         ShowCardInfoPanel.SetActive(true);

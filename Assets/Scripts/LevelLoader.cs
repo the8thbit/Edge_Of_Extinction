@@ -63,7 +63,7 @@ public class LevelLoader : MonoBehaviour
         while (Counter <= 1.0f)
         {
             //put this back to 0.005f when you are done testing - ben
-            Counter += 0.005f;
+            Counter += 0.05f;
             Slider.value = Counter;
             yield return null;
         }
