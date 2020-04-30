@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour {
 
     /*****************************************************************************/
     /*****************************************************************************/
-    /*EVERYTHING BELPOW HERE REGAURDING OBJECTS AND VARIABLES WILL DEFINATELY BE 
+    /*EVERYTHING BELPOW HERE REGAURDING OBJECTS AND VARIABLES WILL DEFINITELY BE 
      * STAYING IN THE GAME MANAGER CLASS, EVERYTHING ABOVE WILL PROBABLY BE DELETED
      */
     /*****************************************************************************/
